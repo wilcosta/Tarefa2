@@ -36,7 +36,11 @@
             this.comboBoxGen = new System.Windows.Forms.ComboBox();
             this.textBoxLocal = new System.Windows.Forms.TextBox();
             this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
+<<<<<<< HEAD
             this.listViewFilmes = new System.Windows.Forms.ListView();
+=======
+            this.listView1 = new System.Windows.Forms.ListView();
+>>>>>>> origin/master
             this.columnHeaderNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderGen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -207,7 +211,11 @@
             this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonAdicionar);
+<<<<<<< HEAD
             this.Controls.Add(this.listViewFilmes);
+=======
+            this.Controls.Add(this.listView1);
+>>>>>>> origin/master
             this.Controls.Add(this.dateTimePickerData);
             this.Controls.Add(this.textBoxLocal);
             this.Controls.Add(this.comboBoxGen);
@@ -234,7 +242,11 @@
         private System.Windows.Forms.ComboBox comboBoxGen;
         private System.Windows.Forms.TextBox textBoxLocal;
         private System.Windows.Forms.DateTimePicker dateTimePickerData;
+<<<<<<< HEAD
         private System.Windows.Forms.ListView listViewFilmes;
+=======
+        private System.Windows.Forms.ListView listView1;
+>>>>>>> origin/master
         private System.Windows.Forms.ColumnHeader columnHeaderNome;
         private System.Windows.Forms.ColumnHeader columnHeaderGen;
         private System.Windows.Forms.ColumnHeader columnHeaderLocal;
