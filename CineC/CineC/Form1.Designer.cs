@@ -1,6 +1,6 @@
 ﻿namespace CineC
 {
-    partial class Form1
+    partial class CineC
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +35,8 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.comboBoxGen = new System.Windows.Forms.ComboBox();
             this.textBoxLocal = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.dateTimePickerData = new System.Windows.Forms.DateTimePicker();
+            this.listViewFilmes = new System.Windows.Forms.ListView();
             this.columnHeaderNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderGen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,6 +44,7 @@
             this.buttonAdicionar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonRemover = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNome
@@ -91,6 +92,7 @@
             // 
             // comboBoxGen
             // 
+            this.comboBoxGen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGen.FormattingEnabled = true;
             this.comboBoxGen.Items.AddRange(new object[] {
             "Ação",
@@ -114,26 +116,29 @@
             this.textBoxLocal.Size = new System.Drawing.Size(495, 20);
             this.textBoxLocal.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dateTimePickerData
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(527, 123);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(235, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePickerData.Location = new System.Drawing.Point(527, 123);
+            this.dateTimePickerData.Name = "dateTimePickerData";
+            this.dateTimePickerData.Size = new System.Drawing.Size(235, 20);
+            this.dateTimePickerData.TabIndex = 7;
             // 
-            // listView1
+            // listViewFilmes
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewFilmes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderNome,
             this.columnHeaderGen,
             this.columnHeaderLocal,
             this.columnHeaderData});
-            this.listView1.Location = new System.Drawing.Point(15, 173);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(747, 247);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listViewFilmes.FullRowSelect = true;
+            this.listViewFilmes.GridLines = true;
+            this.listViewFilmes.Location = new System.Drawing.Point(15, 149);
+            this.listViewFilmes.Name = "listViewFilmes";
+            this.listViewFilmes.Size = new System.Drawing.Size(747, 271);
+            this.listViewFilmes.TabIndex = 8;
+            this.listViewFilmes.UseCompatibleStateImageBehavior = false;
+            this.listViewFilmes.View = System.Windows.Forms.View.Details;
+            this.listViewFilmes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewFilmes_MouseDoubleClick);
             // 
             // columnHeaderNome
             // 
@@ -157,16 +162,17 @@
             // 
             // buttonAdicionar
             // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(522, 426);
+            this.buttonAdicionar.Location = new System.Drawing.Point(525, 426);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(75, 23);
             this.buttonAdicionar.TabIndex = 9;
             this.buttonAdicionar.Text = "Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
+            this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(604, 426);
+            this.buttonEditar.Location = new System.Drawing.Point(606, 426);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(75, 23);
             this.buttonEditar.TabIndex = 10;
@@ -175,23 +181,34 @@
             // 
             // buttonRemover
             // 
-            this.buttonRemover.Location = new System.Drawing.Point(686, 426);
+            this.buttonRemover.Location = new System.Drawing.Point(687, 426);
             this.buttonRemover.Name = "buttonRemover";
             this.buttonRemover.Size = new System.Drawing.Size(75, 23);
             this.buttonRemover.TabIndex = 11;
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = true;
+            this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
             // 
-            // Form1
+            // buttonSalvar
+            // 
+            this.buttonSalvar.Location = new System.Drawing.Point(444, 426);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalvar.TabIndex = 12;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            // 
+            // CineC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 466);
+            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonAdicionar);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.listViewFilmes);
+            this.Controls.Add(this.dateTimePickerData);
             this.Controls.Add(this.textBoxLocal);
             this.Controls.Add(this.comboBoxGen);
             this.Controls.Add(this.textBoxNome);
@@ -199,8 +216,8 @@
             this.Controls.Add(this.labelLocal);
             this.Controls.Add(this.labelGenero);
             this.Controls.Add(this.labelNome);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "CineC";
+            this.Text = "CineC";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,8 +233,8 @@
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.ComboBox comboBoxGen;
         private System.Windows.Forms.TextBox textBoxLocal;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerData;
+        private System.Windows.Forms.ListView listViewFilmes;
         private System.Windows.Forms.ColumnHeader columnHeaderNome;
         private System.Windows.Forms.ColumnHeader columnHeaderGen;
         private System.Windows.Forms.ColumnHeader columnHeaderLocal;
@@ -225,6 +242,7 @@
         private System.Windows.Forms.Button buttonAdicionar;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonRemover;
+        private System.Windows.Forms.Button buttonSalvar;
     }
 }
 
