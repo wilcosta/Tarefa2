@@ -50,7 +50,7 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            //this.labelNome.Location = new System.Drawing.Point(12, 56);
+            this.labelNome.Location = new System.Drawing.Point(0, 0);
             this.labelNome.Name = "labelNome";
             this.labelNome.Size = new System.Drawing.Size(35, 13);
             this.labelNome.TabIndex = 0;
@@ -95,6 +95,7 @@
             this.comboBoxGen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGen.FormattingEnabled = true;
             this.comboBoxGen.Items.AddRange(new object[] {
+            "Selecione...",
             "Ação",
             "Aventura",
             "Comédia",

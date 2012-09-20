@@ -15,7 +15,7 @@ namespace CineC
         {
             InitializeComponent();
         }
-
+        // Criação do ListView
         ListViewItem novoItem = new ListViewItem();
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,7 +33,6 @@ namespace CineC
             else
 
             {
-
                 // Criação do novo item (primeira coluna) campo Nome do filme
                 novoItem = new ListViewItem();
                 novoItem.Text = textBoxNome.Text;
@@ -48,9 +47,8 @@ namespace CineC
 
                 // Criação do terceiro subitem (quarta coluna) campo Data
                 ListViewItem.ListViewSubItem SubitemData = new ListViewItem.ListViewSubItem();
-                string data = dateTimePickerData.Value.Date.ToString();
-
-                // data = dateTimePickerData.Format = 
+                // Adiciona somente a data conforme a formatacao
+                SubitemData.Text = dateTimePickerData.Value.Date.ToString("dd/MM/yyyy");
 
                 //Adiciona os subitens ao item 
                 novoItem.SubItems.Add(SubitemGenero);
@@ -59,15 +57,36 @@ namespace CineC
 
                 // Adiciona o item ao ListView
                 listViewFilmes.Items.Add(novoItem);
-
-
+                ResetForm();
             }
+        }
 
+        public void ResetForm()
+        {
+            buttonAdicionar.Enabled = true;
+            buttonSalvar.Visible = false;
+            textBoxNome.Text = "";
+            textBoxLocal.Text = "";
+            comboBoxGen.SelectedIndex = 0;
+            dateTimePickerData.Value = DateTime.Now;
         }
 
         private void buttonRemover_Click(object sender, EventArgs e)
         {
-           
+            // verifica se o usuário selecionou algum item da lista
+            if (listViewFilmes.SelectedItems.Count != 0)
+            {
+                int posicao = listViewFilmes.SelectedItems.Count;
+
+                // apaga o item selecionado
+                for (int i = posicao - 1; i >= 0; i--)
+                {
+                    // cria uma lista onde é adicionado os itens selecionados
+                    ListViewItem ItemSelecionado = listViewFilmes.SelectedItems[i];
+                    listViewFilmes.Items.Remove(ItemSelecionado);
+                }
+            }
+
         }
 
         private void listViewFilmes_MouseDoubleClick(object sender, MouseEventArgs e)
