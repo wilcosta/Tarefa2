@@ -16,16 +16,12 @@ namespace CineC
             InitializeComponent();
         }
 
-
         ListViewItem novoItem = new ListViewItem();
 
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBoxGen.SelectedIndex = 0;
-<<<<<<< HEAD
             buttonSalvar.Visible = false;
-=======
->>>>>>> origin/master
         }
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
@@ -35,7 +31,7 @@ namespace CineC
                 MessageBox.Show("Favor preencher todos os campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             else
-<<<<<<< HEAD
+
             {
 
                 // Criação do novo item (primeira coluna) campo Nome do filme
@@ -83,7 +79,6 @@ namespace CineC
         {
             buttonSalvar.Visible = true;
             buttonAdicionar.Enabled = false;
-=======
 
                // Criação do novo item (primeira coluna) campo Nome do filme
                novoItem = new ListViewItem();
@@ -108,14 +103,9 @@ namespace CineC
 
               
         }
->>>>>>> origin/master
+
 
         }
 
     }
-<<<<<<< HEAD
 
-
-}
-=======
->>>>>>> origin/master
