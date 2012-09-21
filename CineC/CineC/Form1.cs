@@ -86,6 +86,13 @@ namespace CineC
                     listViewFilmes.Items.Remove(ItemSelecionado);
                 }
             }
+            else
+            {
+                if (listViewFilmes.Items.Count == 0)
+                    MessageBox.Show("Impossivel remover!\n Lista vazia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Selecione primeiramente um item a ser removido!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
 
