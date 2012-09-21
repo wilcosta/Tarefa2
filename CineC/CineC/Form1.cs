@@ -100,7 +100,7 @@ namespace CineC
             EditItem();
         }
 
-        private void ButtonEditar_Click(object sender, EventArgs e)
+        private void buttonEditar_Click(object sender, EventArgs e)
         {
             EditItem();
         }
@@ -129,9 +129,29 @@ namespace CineC
               
         }
 
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            buttonAdicionar.Enabled = false;
 
+            // validação dos campos
+            if (textBoxNome.Text.Trim() == "" || textBoxLocal.Text.Trim() == "" || comboBoxGen.SelectedIndex == 0)
+                MessageBox.Show("Todos os campos devem estar preenchidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                
+                // Altera dados dos itens da lista
+                listViewFilmes.SelectedItems[0].SubItems[0].Text = textBoxNome.Text;
+                listViewFilmes.SelectedItems[0].SubItems[1].Text = comboBoxGen.SelectedItem.ToString();
+                listViewFilmes.SelectedItems[0].SubItems[2].Text = textBoxLocal.Text;
+
+                // Limpa todos os campos
+                ResetForm();
+
+                listViewFilmes.SelectedItems[0].Selected = false;
+ 
+            }
 
         }
 
     }
-
+}
