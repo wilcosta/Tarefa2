@@ -45,12 +45,14 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonRemover = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonPesquisar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Location = new System.Drawing.Point(0, 0);
+            this.labelNome.Location = new System.Drawing.Point(12, 57);
             this.labelNome.Name = "labelNome";
             this.labelNome.Size = new System.Drawing.Size(35, 13);
             this.labelNome.TabIndex = 0;
@@ -59,7 +61,7 @@
             // labelGenero
             // 
             this.labelGenero.AutoSize = true;
-            this.labelGenero.Location = new System.Drawing.Point(524, 56);
+            this.labelGenero.Location = new System.Drawing.Point(524, 57);
             this.labelGenero.Name = "labelGenero";
             this.labelGenero.Size = new System.Drawing.Size(42, 13);
             this.labelGenero.TabIndex = 1;
@@ -68,7 +70,7 @@
             // labelLocal
             // 
             this.labelLocal.AutoSize = true;
-            this.labelLocal.Location = new System.Drawing.Point(12, 107);
+            this.labelLocal.Location = new System.Drawing.Point(12, 108);
             this.labelLocal.Name = "labelLocal";
             this.labelLocal.Size = new System.Drawing.Size(112, 13);
             this.labelLocal.TabIndex = 2;
@@ -77,7 +79,7 @@
             // labelData
             // 
             this.labelData.AutoSize = true;
-            this.labelData.Location = new System.Drawing.Point(524, 107);
+            this.labelData.Location = new System.Drawing.Point(524, 108);
             this.labelData.Name = "labelData";
             this.labelData.Size = new System.Drawing.Size(30, 13);
             this.labelData.TabIndex = 3;
@@ -85,7 +87,7 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(15, 72);
+            this.textBoxNome.Location = new System.Drawing.Point(15, 73);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(492, 20);
             this.textBoxNome.TabIndex = 4;
@@ -105,21 +107,21 @@
             "Infantil",
             "Romance",
             "Ficção Científica"});
-            this.comboBoxGen.Location = new System.Drawing.Point(527, 72);
+            this.comboBoxGen.Location = new System.Drawing.Point(527, 73);
             this.comboBoxGen.Name = "comboBoxGen";
             this.comboBoxGen.Size = new System.Drawing.Size(235, 21);
             this.comboBoxGen.TabIndex = 5;
             // 
             // textBoxLocal
             // 
-            this.textBoxLocal.Location = new System.Drawing.Point(12, 123);
+            this.textBoxLocal.Location = new System.Drawing.Point(12, 124);
             this.textBoxLocal.Name = "textBoxLocal";
             this.textBoxLocal.Size = new System.Drawing.Size(495, 20);
             this.textBoxLocal.TabIndex = 6;
             // 
             // dateTimePickerData
             // 
-            this.dateTimePickerData.Location = new System.Drawing.Point(527, 123);
+            this.dateTimePickerData.Location = new System.Drawing.Point(527, 124);
             this.dateTimePickerData.Name = "dateTimePickerData";
             this.dateTimePickerData.Size = new System.Drawing.Size(235, 20);
             this.dateTimePickerData.TabIndex = 7;
@@ -133,7 +135,7 @@
             this.columnHeaderData});
             this.listViewFilmes.FullRowSelect = true;
             this.listViewFilmes.GridLines = true;
-            this.listViewFilmes.Location = new System.Drawing.Point(15, 149);
+            this.listViewFilmes.Location = new System.Drawing.Point(15, 150);
             this.listViewFilmes.Name = "listViewFilmes";
             this.listViewFilmes.Size = new System.Drawing.Size(747, 271);
             this.listViewFilmes.TabIndex = 8;
@@ -144,7 +146,7 @@
             // columnHeaderNome
             // 
             this.columnHeaderNome.Text = "Nome";
-            this.columnHeaderNome.Width = 114;
+            this.columnHeaderNome.Width = 219;
             // 
             // columnHeaderGen
             // 
@@ -154,16 +156,16 @@
             // columnHeaderLocal
             // 
             this.columnHeaderLocal.Text = "Local que foi Assistido";
-            this.columnHeaderLocal.Width = 249;
+            this.columnHeaderLocal.Width = 258;
             // 
             // columnHeaderData
             // 
             this.columnHeaderData.Text = "Data";
-            this.columnHeaderData.Width = 186;
+            this.columnHeaderData.Width = 128;
             // 
             // buttonAdicionar
             // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(525, 426);
+            this.buttonAdicionar.Location = new System.Drawing.Point(525, 427);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(75, 23);
             this.buttonAdicionar.TabIndex = 9;
@@ -173,7 +175,7 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(606, 426);
+            this.buttonEditar.Location = new System.Drawing.Point(606, 427);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(75, 23);
             this.buttonEditar.TabIndex = 10;
@@ -183,7 +185,7 @@
             // 
             // buttonRemover
             // 
-            this.buttonRemover.Location = new System.Drawing.Point(687, 426);
+            this.buttonRemover.Location = new System.Drawing.Point(687, 427);
             this.buttonRemover.Name = "buttonRemover";
             this.buttonRemover.Size = new System.Drawing.Size(75, 23);
             this.buttonRemover.TabIndex = 11;
@@ -193,7 +195,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(444, 426);
+            this.buttonSalvar.Location = new System.Drawing.Point(444, 427);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 12;
@@ -201,11 +203,31 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Formulário para cadastro de filmes";
+            // 
+            // buttonPesquisar
+            // 
+            this.buttonPesquisar.Location = new System.Drawing.Point(15, 428);
+            this.buttonPesquisar.Name = "buttonPesquisar";
+            this.buttonPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.buttonPesquisar.TabIndex = 14;
+            this.buttonPesquisar.Text = "Pesquisar";
+            this.buttonPesquisar.UseVisualStyleBackColor = true;
+            // 
             // CineC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 466);
+            this.Controls.Add(this.buttonPesquisar);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.buttonEditar);
@@ -246,6 +268,8 @@
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonRemover;
         private System.Windows.Forms.Button buttonSalvar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonPesquisar;
     }
 }
 

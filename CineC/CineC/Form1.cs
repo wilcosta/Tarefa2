@@ -138,13 +138,12 @@ namespace CineC
                 MessageBox.Show("Todos os campos devem estar preenchidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                
                 // Altera dados dos itens da lista
                 listViewFilmes.SelectedItems[0].SubItems[0].Text = textBoxNome.Text;
                 listViewFilmes.SelectedItems[0].SubItems[1].Text = comboBoxGen.SelectedItem.ToString();
                 listViewFilmes.SelectedItems[0].SubItems[2].Text = textBoxLocal.Text;
+                listViewFilmes.SelectedItems[0].SubItems[3].Text = dateTimePickerData.Value.ToString("dd/MM/yyyy");
 
-                // Limpa todos os campos
                 ResetForm();
 
                 listViewFilmes.SelectedItems[0].Selected = false;
