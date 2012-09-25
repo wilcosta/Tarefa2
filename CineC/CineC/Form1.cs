@@ -22,6 +22,7 @@ namespace CineC
         {
             comboBoxGen.SelectedIndex = 0;
             buttonSalvar.Visible = false;
+            buttonPesquisar.Visible = false;
         }
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
@@ -58,6 +59,7 @@ namespace CineC
                 // Adiciona o item ao ListView
                 listViewFilmes.Items.Add(novoItem);
                 ResetForm();
+                buttonPesquisar.Visible = true;
             }
         }
 
@@ -147,8 +149,17 @@ namespace CineC
                 ResetForm();
 
                 listViewFilmes.SelectedItems[0].Selected = false;
+                buttonPesquisar.Visible = true;
  
             }
+
+        }
+
+        private void buttonPesquisar_Click(object sender, EventArgs e)
+        {
+            Form2 pesquisar = new Form2(listViewFilmes);
+            pesquisar.ShowDialog();
+
 
         }
 

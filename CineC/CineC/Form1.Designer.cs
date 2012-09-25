@@ -220,6 +220,7 @@
             this.buttonPesquisar.TabIndex = 14;
             this.buttonPesquisar.Text = "Pesquisar";
             this.buttonPesquisar.UseVisualStyleBackColor = true;
+            this.buttonPesquisar.Click += new System.EventHandler(this.buttonPesquisar_Click);
             // 
             // CineC
             // 
