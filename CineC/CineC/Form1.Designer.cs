@@ -114,9 +114,9 @@
             // 
             // textBoxLocal
             // 
-            this.textBoxLocal.Location = new System.Drawing.Point(12, 124);
+            this.textBoxLocal.Location = new System.Drawing.Point(15, 124);
             this.textBoxLocal.Name = "textBoxLocal";
-            this.textBoxLocal.Size = new System.Drawing.Size(495, 20);
+            this.textBoxLocal.Size = new System.Drawing.Size(492, 20);
             this.textBoxLocal.TabIndex = 6;
             // 
             // dateTimePickerData
@@ -243,6 +243,7 @@
             this.Controls.Add(this.labelGenero);
             this.Controls.Add(this.labelNome);
             this.Name = "CineC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CineC";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

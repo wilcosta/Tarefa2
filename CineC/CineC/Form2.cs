@@ -131,68 +131,105 @@ namespace CineC
                 MessageBox.Show("Favor preencher os campos!");
 
 
-            // Pesquisa com um campo
+            // Pesquisa com 1 campo
             if (OpcaoPesquisa.Count == 1)
             {
                 if (OpcaoPesquisa[0] == "Nome")
                 {
-                    // Faz a Pesquisa com o nome
+                    // Limpa a lista, para fazer uma nova pesquisa
+                    listViewFilmesPesq.Items.Clear();
 
-                }
-                if (OpcaoPesquisa[0] == "Local")
-                {
-                    // Faz a Pesquisa com o Local
-
+                    // Percorre a lista e verifica se o nome que o usuário 
+                    // informou contém na lista com os filmes cadastrados
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        // Se a pesquisa obteve algum resultado, 
+                        // chama o metodo para adicionar esse resultado na lista
+                        if (Lista.Items[i].Text.IndexOf(textBoxNome.Text) > -1)
+                            AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                    }
                 }
                 if (OpcaoPesquisa[0] == "Genero")
                 {
                     // Faz a Pesquisa com o Genero
+                    listViewFilmesPesq.Items.Clear();
 
+                    // Percorre a lista e verifica se o genero que o usuário 
+                    // informou contém na lista com os filmes cadastrados 
+                    // o campo genero na lista é o SubItem[1]
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        // Se a pesquisa obteve algum resultado, 
+                        // chama o metodo para adicionar esse resultado na lista
+                        if (Lista.Items[i].SubItems[1].Text.IndexOf(comboBoxGen.SelectedItem.ToString()) > -1)
+                            AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                    }
+                }
+                if (OpcaoPesquisa[0] == "Local")
+                {
+                    // Faz a pesquisa com o Local
+                    listViewFilmesPesq.Items.Clear();
+
+                    // o campo local na lista é o SubItem[2]
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        if (Lista.Items[i].SubItems[2].Text.IndexOf(textBoxLocal.Text) > -1)
+                            AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                    }
                 }
                 if (OpcaoPesquisa[0] == "Data")
                 {
+                    DateTime dataInicio = dateTimePickerData1.Value;
+                    DateTime dataFim = dateTimePickerData2.Value;
+
                     // Faz a Pesquisa com a data
+                    listViewFilmesPesq.Items.Clear();
+
+                    // o campo data na lista é o SubItem[3]
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        // Converte a data que esta em formato string para DateTime
+                        DateTime data = DateTime.Parse(Lista.Items[i].SubItems[3].Text);
+
+                        // Verifica se a data está entre os parâmetros
+                        if (data.Date >= dataInicio.Date && data.Date <= dataFim.Date)
+                            AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                    }
 
                 }
             }
 
-            // Faz a Pesquisa com dois Campos
+            // Faz a Pesquisa com 2 Campos
             if (OpcaoPesquisa.Count == 2)
             {
                 if (OpcaoPesquisa[0] == "Nome" && OpcaoPesquisa[1] == "Local")
                 {
                     // Faz a Pesquisa com o nome E local
-
                 }
 
                 if (OpcaoPesquisa[0] == "Nome" && OpcaoPesquisa[1] == "Genero")
                 {
                     // Faz a Pesquisa com o nome E genero
-
                 }
 
                 if (OpcaoPesquisa[0] == "Nome" && OpcaoPesquisa[1] == "Data")
                 {
                     // Faz a pesquisa com o nome E data
-
                 }
 
                 if (OpcaoPesquisa[0] == "Local" && OpcaoPesquisa[1] == "Genero")
                 {
                     // Faz a Pesquisa com o local E genero
-
                 }
 
                 if (OpcaoPesquisa[0] == "Local" && OpcaoPesquisa[1] == "Data")
                 {
                     // Faz a pesquisa com o local E data
-
                 }
 
                 if (OpcaoPesquisa[0] == "Genero" && OpcaoPesquisa[1] == "Data")
                 {
                     // Faz a pesquisa com o genero E data
-
                 }
             }
 
@@ -230,12 +267,38 @@ namespace CineC
             {
                 if (OpcaoPesquisa[0] == "Nome" && OpcaoPesquisa[1] == "Local" && OpcaoPesquisa[2] == "Genero" && OpcaoPesquisa[3] == "Data")
                 {
-                    // Faz a Pesquisa com o nome, local, genero e data
+                    // Faz a Pesquisa com o nome, local, genero
 
                 }
             }
 
 
         }
+
+        public void AddItem(string Nome, string genero, string local, string data)
+        {
+            // Adiciona o item conforme o resultado da pesquisa
+
+            ListViewItem novoItem = new ListViewItem();
+            novoItem.Text = Nome;
+
+            ListViewItem.ListViewSubItem SubitemGenero = new ListViewItem.ListViewSubItem();
+            SubitemGenero.Text = genero;
+
+            ListViewItem.ListViewSubItem SubitemLocal = new ListViewItem.ListViewSubItem();
+            SubitemLocal.Text = local;
+
+            ListViewItem.ListViewSubItem SubitemData = new ListViewItem.ListViewSubItem();
+            SubitemData.Text = data;
+
+            novoItem.SubItems.Add(SubitemGenero);
+            novoItem.SubItems.Add(SubitemLocal);
+            novoItem.SubItems.Add(SubitemData);
+            listViewFilmesPesq.Items.Add(novoItem);
+
+        }
+
+
+
     }
 }

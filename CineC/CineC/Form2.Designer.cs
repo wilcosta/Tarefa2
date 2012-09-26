@@ -30,10 +30,9 @@
         {
             this.columnHeaderGen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderDataI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderData = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewFilmesPesq = new System.Windows.Forms.ListView();
-            this.columnHeaderDataF = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dateTimePickerData2 = new System.Windows.Forms.DateTimePicker();
             this.textBoxLocal = new System.Windows.Forms.TextBox();
             this.comboBoxGen = new System.Windows.Forms.ComboBox();
@@ -57,22 +56,22 @@
             // columnHeaderGen
             // 
             this.columnHeaderGen.Text = "Gênero";
-            this.columnHeaderGen.Width = 117;
+            this.columnHeaderGen.Width = 118;
             // 
             // columnHeaderLocal
             // 
             this.columnHeaderLocal.Text = "Local que foi Assistido";
-            this.columnHeaderLocal.Width = 221;
+            this.columnHeaderLocal.Width = 258;
             // 
-            // columnHeaderDataI
+            // columnHeaderData
             // 
-            this.columnHeaderDataI.Text = "Data Inicial";
-            this.columnHeaderDataI.Width = 114;
+            this.columnHeaderData.Text = "Data";
+            this.columnHeaderData.Width = 128;
             // 
             // columnHeaderNome
             // 
             this.columnHeaderNome.Text = "Nome";
-            this.columnHeaderNome.Width = 144;
+            this.columnHeaderNome.Width = 224;
             // 
             // listViewFilmesPesq
             // 
@@ -80,8 +79,7 @@
             this.columnHeaderNome,
             this.columnHeaderGen,
             this.columnHeaderLocal,
-            this.columnHeaderDataI,
-            this.columnHeaderDataF});
+            this.columnHeaderData});
             this.listViewFilmesPesq.FullRowSelect = true;
             this.listViewFilmesPesq.GridLines = true;
             this.listViewFilmesPesq.Location = new System.Drawing.Point(15, 150);
@@ -90,11 +88,6 @@
             this.listViewFilmesPesq.TabIndex = 21;
             this.listViewFilmesPesq.UseCompatibleStateImageBehavior = false;
             this.listViewFilmesPesq.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeaderDataF
-            // 
-            this.columnHeaderDataF.Text = "Data Final";
-            this.columnHeaderDataF.Width = 119;
             // 
             // dateTimePickerData2
             // 
@@ -142,18 +135,18 @@
             this.labelData.AutoSize = true;
             this.labelData.Location = new System.Drawing.Point(524, 108);
             this.labelData.Name = "labelData";
-            this.labelData.Size = new System.Drawing.Size(23, 13);
+            this.labelData.Size = new System.Drawing.Size(55, 13);
             this.labelData.TabIndex = 16;
-            this.labelData.Text = "Até";
+            this.labelData.Text = "Data Final";
             // 
             // labelLocal
             // 
             this.labelLocal.AutoSize = true;
             this.labelLocal.Location = new System.Drawing.Point(12, 108);
             this.labelLocal.Name = "labelLocal";
-            this.labelLocal.Size = new System.Drawing.Size(36, 13);
+            this.labelLocal.Size = new System.Drawing.Size(112, 13);
             this.labelLocal.TabIndex = 15;
-            this.labelLocal.Text = "Local ";
+            this.labelLocal.Text = "Local que foi Assistido";
             // 
             // labelGeneroPesq
             // 
@@ -229,9 +222,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(269, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 30;
-            this.label1.Text = "De";
+            this.label1.Text = "Data Inicial";
             // 
             // buttonFiltrar
             // 
@@ -241,6 +234,7 @@
             this.buttonFiltrar.TabIndex = 32;
             this.buttonFiltrar.Text = "Filtrar";
             this.buttonFiltrar.UseVisualStyleBackColor = true;
+            this.buttonFiltrar.Click += new System.EventHandler(this.buttonFiltrar_Click);
             // 
             // buttonCancelar
             // 
@@ -294,6 +288,7 @@
             this.Controls.Add(this.labelGeneroPesq);
             this.Controls.Add(this.labelNomePesq);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CineC Pesquisa";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
@@ -305,7 +300,7 @@
 
         private System.Windows.Forms.ColumnHeader columnHeaderGen;
         private System.Windows.Forms.ColumnHeader columnHeaderLocal;
-        private System.Windows.Forms.ColumnHeader columnHeaderDataI;
+        private System.Windows.Forms.ColumnHeader columnHeaderData;
         private System.Windows.Forms.ColumnHeader columnHeaderNome;
         private System.Windows.Forms.ListView listViewFilmesPesq;
         private System.Windows.Forms.DateTimePicker dateTimePickerData2;
@@ -322,7 +317,6 @@
         private System.Windows.Forms.CheckBox checkBoxData;
         private System.Windows.Forms.DateTimePicker dateTimePickerData1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader columnHeaderDataF;
         private System.Windows.Forms.Button buttonFiltrar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Label label2;
