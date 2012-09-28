@@ -135,9 +135,9 @@
             this.labelData.AutoSize = true;
             this.labelData.Location = new System.Drawing.Point(524, 108);
             this.labelData.Name = "labelData";
-            this.labelData.Size = new System.Drawing.Size(23, 13);
+            this.labelData.Size = new System.Drawing.Size(55, 13);
             this.labelData.TabIndex = 16;
-            this.labelData.Text = "Até";
+            this.labelData.Text = "Data Final";
             // 
             // labelLocal
             // 
@@ -222,9 +222,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(269, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 30;
-            this.label1.Text = "De";
+            this.label1.Text = "Data Inicial";
             // 
             // buttonFiltrar
             // 

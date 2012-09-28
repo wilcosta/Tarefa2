@@ -181,7 +181,6 @@ namespace CineC
                         if (data.Date >= dataInicio.Date && data.Date <= dataFim.Date)
                             AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
                     }
-
                 }
             }
 
@@ -302,39 +301,123 @@ namespace CineC
             // *** Faz a Pesquisa com 3 Campos *** //
             if (OpcaoPesquisa.Count == 3)
             {
+                DateTime dataInicio = dateTimePickerData1.Value;
+                DateTime dataFim = dateTimePickerData2.Value;
+
+                // Limpa a lista, para uma nova pesquisa
+                listViewFilmesPesq.Items.Clear();
+
                 if (OpcaoPesquisa[0] == "Nome" && OpcaoPesquisa[1] == "Local" && OpcaoPesquisa[2] == "Genero")
                 {
-                    // Faz a Pesquisa com o nome, local e genero
-
+                    // Faz a Pesquisa com o Nome, Local e Genero
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        // Verifica se o Nome que o usuário informou contém no listView  
+                        if (Lista.Items[i].Text.IndexOf(textBoxNome.Text) > -1)
+                        {
+                            // Verifica se o Local que o usuário informou contém, no resultado da pesquisa pelo Nome
+                            if (Lista.Items[i].SubItems[2].Text.IndexOf(textBoxLocal.Text) > -1)
+                            {
+                                // Verifica se o Genero que o usuário informou contém, no resultado da pesquisa pelo Local
+                                if (Lista.Items[i].SubItems[1].Text.IndexOf(comboBoxGen.SelectedItem.ToString()) > -1)
+                                    AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                            }
+                        }
+                    }
                 }
 
                 if (OpcaoPesquisa[0] == "Nome" && OpcaoPesquisa[1] == "Local" && OpcaoPesquisa[2] == "Data")
                 {
-                    // Faz a Pesquisa com o nome, genero e data
+                    // Faz a Pesquisa com o Nome, Genero e Data
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        if (Lista.Items[i].Text.IndexOf(textBoxNome.Text) > -1)
+                        {
+                            // Verifica se o Local que o usuário informou contém, no resultado da pesquisa pelo Nome
+                            if (Lista.Items[i].SubItems[2].Text.IndexOf(textBoxLocal.Text) > -1)
+                            {
+                                DateTime data = DateTime.Parse(Lista.Items[i].SubItems[3].Text);
 
+                                // Verifica se a data que o usuário informou está dentro dos parâmetros, no resultado da pesquisa pelo Local
+                                if (data.Date >= dataInicio.Date && data.Date <= dataFim.Date)
+                                    AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                            }
+                        }
+                    }
                 }
 
                 if (OpcaoPesquisa[0] == "Nome" && OpcaoPesquisa[1] == "Genero" && OpcaoPesquisa[2] == "Data")
                 {
-                    // Faz a pesquisa com o nome E data
+                    // Faz a pesquisa com o Nome E  Genero E Data
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        if (Lista.Items[i].Text.IndexOf(textBoxNome.Text) > -1)
+                        {
+                            // Verifica se o Genero que o usuário informou contém, no resultado da pesquisa pelo Nome
+                            if (Lista.Items[i].SubItems[1].Text.IndexOf(comboBoxGen.SelectedItem.ToString()) > -1)
+                            {
+                                DateTime data = DateTime.Parse(Lista.Items[i].SubItems[3].Text);
 
+                                // Verifica se a data que o usuário informou está dentro dos parâmetros, no resultado da pesquisa pelo Local
+                                if (data.Date >= dataInicio.Date && data.Date <= dataFim.Date)
+                                    AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                            }
+                        }
+                    }
                 }
-
                 if (OpcaoPesquisa[0] == "Local" && OpcaoPesquisa[1] == "Genero" && OpcaoPesquisa[2] == "Data")
                 {
-                    // Faz a pesquisa com o nome E data
+                    // Faz a pesquisa com o Local E  Genero E Data
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        if (Lista.Items[i].SubItems[2].Text.IndexOf(textBoxLocal.Text) > -1)
+                        {
+                            // Verifica se o Genero que o usuário informou contém, no resultado da pesquisa pelo Local
+                            if (Lista.Items[i].SubItems[1].Text.IndexOf(comboBoxGen.SelectedItem.ToString()) > -1)
+                            {
+                                DateTime data = DateTime.Parse(Lista.Items[i].SubItems[3].Text);
 
+                                // Verifica se a data que o usuário informou está dentro dos parâmetros, no resultado da pesquisa pelo Local
+                                if (data.Date >= dataInicio.Date && data.Date <= dataFim.Date)
+                                    AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                            }
+                        }
+                    }
                 }
-
             }
 
             // *** Faz a Pesquisa com 4 Campos *** //
-            if (OpcaoPesquisa.Count == 3)
+            if (OpcaoPesquisa.Count == 4)
             {
+                DateTime dataInicio = dateTimePickerData1.Value;
+                DateTime dataFim = dateTimePickerData2.Value;
+
+                // Limpa a lista, para uma nova pesquisa
+                listViewFilmesPesq.Items.Clear();
+
                 if (OpcaoPesquisa[0] == "Nome" && OpcaoPesquisa[1] == "Local" && OpcaoPesquisa[2] == "Genero" && OpcaoPesquisa[3] == "Data")
                 {
-                    // Faz a Pesquisa com o nome, local, genero
+                    // Faz a Pesquisa com o Nome E Local E Genero E Data
+                    for (int i = 0; i < Lista.Items.Count; i++)
+                    {
+                        // Verifica se o Nome que o usuário informou contém, no ListView
+                        if (Lista.Items[i].Text.IndexOf(textBoxNome.Text) > -1)
+                        {
+                            // Verifica se o Local que o usuário informou contém, no resultado da pesquisa pelo Nome
+                            if (Lista.Items[i].SubItems[2].Text.IndexOf(textBoxLocal.Text) > -1)
+                            {
+                                // Verifica se o Genero que o usuário informou contém, no resultado da pesquisa pelo Local
+                                if (Lista.Items[i].SubItems[1].Text.IndexOf(comboBoxGen.SelectedItem.ToString()) > -1)
+                                {
+                                    DateTime data = DateTime.Parse(Lista.Items[i].SubItems[3].Text);
 
+                                    // Verifica se a data que o usuário informou está dentro dos parâmetros, no resultado da pesquisa pelo Genero
+                                    if (data.Date >= dataInicio.Date && data.Date <= dataFim.Date)
+                                        AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -359,7 +442,6 @@ namespace CineC
             novoItem.SubItems.Add(SubitemLocal);
             novoItem.SubItems.Add(SubitemData);
             listViewFilmesPesq.Items.Add(novoItem);
-
         }
     }
 }
