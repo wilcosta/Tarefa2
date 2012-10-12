@@ -176,5 +176,10 @@ namespace CineC
             else
                 return true;
         }
+
+        private void dateTimePickerData_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

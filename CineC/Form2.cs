@@ -92,7 +92,7 @@ namespace CineC
             errorProvider.Clear();
 
             List<string> OpcaoPesquisa = new List<string>();
-            
+
             // Validação dos campos para pesquisa
             if (checkBoxNome.Checked == true)
             {
@@ -106,7 +106,7 @@ namespace CineC
                     erro++;
                     // coloca um ícone de erro ao lado do campo com preenchido errado,
                     //e mostra uma mensagem quando passar o mouse por cima do ícone
-                    errorProvider.SetError(textBoxNome, "Favor preencher o campo Nome corretamente");
+                    errorProvider.SetError(textBoxNome, "Preencha o campo Nome corretamente");
                 }
             }
 
@@ -120,7 +120,7 @@ namespace CineC
                 else
                 {
                     erro++;
-                    errorProvider.SetError(textBoxLocal, "Favor preencher o campo Local corretamente");
+                    errorProvider.SetError(textBoxLocal, "Preencha o campo Local corretamente");
                 }
             }
 
@@ -134,7 +134,7 @@ namespace CineC
                 else
                 {
                     erro++;
-                    errorProvider.SetError(comboBoxGen, "Favor selecione um gênero");
+                    errorProvider.SetError(comboBoxGen, "Escolha um gênero");
                 }
             }
 
@@ -218,7 +218,7 @@ namespace CineC
                             if (Lista.Items[i].Text.IndexOf(textBoxNome.Text) > -1)
                             {
                                 // Verifica se o Genero que o usuário informou comtém, no resultado da pesquisa
-                                // Caso tenha o Nome e o Genero (SubItems[1]), a pesquia obteve resultado e adiciona no ListView
+                                // Caso tenha o Nome e o Genero (SubItems[1]), a pesquisa obteve resultado e adiciona no ListView
                                 if (Lista.Items[i].SubItems[1].Text.IndexOf(comboBoxGen.SelectedItem.ToString()) > -1)
                                     AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
 
@@ -234,7 +234,7 @@ namespace CineC
                             if (Lista.Items[i].Text.IndexOf(textBoxNome.Text) > -1)
                             {
                                 // Verifica se o Local que o usuário informou comtém, no resultado da pesquisa pelo Nome
-                                // Caso tenha o Nome e o Local (SubItems[2]), a pesquia obteve resultado e adiciona no ListView
+                                // Caso tenha o Nome e o Local (SubItems[2]), a pesquisa obteve resultado e adiciona no ListView
                                 if (Lista.Items[i].SubItems[2].Text.IndexOf(textBoxLocal.Text) > -1)
                                     AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
 
@@ -270,7 +270,7 @@ namespace CineC
                             if (Lista.Items[i].SubItems[2].Text.IndexOf(textBoxLocal.Text) > -1)
                             {
                                 // Verifica se o Genero que o usuário informou comtém no resultado da pesquisa pelo Local
-                                // Caso tenha o Local e o Genero (SubItems[1]), a pesquia obteve resultado e adiciona no ListView
+                                // Caso tenha o Local e o Genero (SubItems[1]), a pesquisa obteve resultado e adiciona no ListView
                                 if (Lista.Items[i].SubItems[1].Text.IndexOf(comboBoxGen.SelectedItem.ToString()) > -1)
                                     AddItem(Lista.Items[i].Text, Lista.Items[i].SubItems[1].Text, Lista.Items[i].SubItems[2].Text, Lista.Items[i].SubItems[3].Text);
 
@@ -473,6 +473,7 @@ namespace CineC
             checkBoxGen.Checked = false;
             checkBoxLocal.Checked = false;
             checkBoxNome.Checked = false;
+            errorProvider.Clear();
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

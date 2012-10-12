@@ -46,7 +46,6 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonRemover = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonPesquisar = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -55,7 +54,7 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Location = new System.Drawing.Point(12, 57);
+            this.labelNome.Location = new System.Drawing.Point(12, 12);
             this.labelNome.Name = "labelNome";
             this.labelNome.Size = new System.Drawing.Size(35, 13);
             this.labelNome.TabIndex = 0;
@@ -63,8 +62,9 @@
             // 
             // labelGenero
             // 
+            this.labelGenero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelGenero.AutoSize = true;
-            this.labelGenero.Location = new System.Drawing.Point(524, 57);
+            this.labelGenero.Location = new System.Drawing.Point(524, 12);
             this.labelGenero.Name = "labelGenero";
             this.labelGenero.Size = new System.Drawing.Size(42, 13);
             this.labelGenero.TabIndex = 1;
@@ -72,8 +72,10 @@
             // 
             // labelLocal
             // 
+            this.labelLocal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLocal.AutoSize = true;
-            this.labelLocal.Location = new System.Drawing.Point(12, 108);
+            this.labelLocal.Location = new System.Drawing.Point(12, 63);
             this.labelLocal.Name = "labelLocal";
             this.labelLocal.Size = new System.Drawing.Size(112, 13);
             this.labelLocal.TabIndex = 2;
@@ -81,8 +83,9 @@
             // 
             // labelData
             // 
+            this.labelData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelData.AutoSize = true;
-            this.labelData.Location = new System.Drawing.Point(524, 108);
+            this.labelData.Location = new System.Drawing.Point(524, 63);
             this.labelData.Name = "labelData";
             this.labelData.Size = new System.Drawing.Size(30, 13);
             this.labelData.TabIndex = 3;
@@ -90,36 +93,46 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(15, 73);
+            this.textBoxNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxNome.Location = new System.Drawing.Point(15, 28);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(492, 20);
             this.textBoxNome.TabIndex = 4;
             // 
             // comboBoxGen
             // 
+            this.comboBoxGen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxGen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGen.FormattingEnabled = true;
-            this.comboBoxGen.Location = new System.Drawing.Point(527, 73);
+            this.comboBoxGen.Location = new System.Drawing.Point(527, 28);
             this.comboBoxGen.Name = "comboBoxGen";
             this.comboBoxGen.Size = new System.Drawing.Size(235, 21);
             this.comboBoxGen.TabIndex = 5;
             // 
             // textBoxLocal
             // 
-            this.textBoxLocal.Location = new System.Drawing.Point(12, 124);
+            this.textBoxLocal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLocal.Location = new System.Drawing.Point(12, 79);
             this.textBoxLocal.Name = "textBoxLocal";
             this.textBoxLocal.Size = new System.Drawing.Size(495, 20);
             this.textBoxLocal.TabIndex = 6;
             // 
             // dateTimePickerData
             // 
-            this.dateTimePickerData.Location = new System.Drawing.Point(527, 124);
+            this.dateTimePickerData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerData.Location = new System.Drawing.Point(527, 79);
             this.dateTimePickerData.Name = "dateTimePickerData";
             this.dateTimePickerData.Size = new System.Drawing.Size(235, 20);
             this.dateTimePickerData.TabIndex = 7;
+            this.dateTimePickerData.ValueChanged += new System.EventHandler(this.dateTimePickerData_ValueChanged);
             // 
             // listViewFilmes
             // 
+            this.listViewFilmes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewFilmes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderNome,
             this.columnHeaderGen,
@@ -127,9 +140,9 @@
             this.columnHeaderData});
             this.listViewFilmes.FullRowSelect = true;
             this.listViewFilmes.GridLines = true;
-            this.listViewFilmes.Location = new System.Drawing.Point(15, 150);
+            this.listViewFilmes.Location = new System.Drawing.Point(15, 105);
             this.listViewFilmes.Name = "listViewFilmes";
-            this.listViewFilmes.Size = new System.Drawing.Size(747, 271);
+            this.listViewFilmes.Size = new System.Drawing.Size(747, 322);
             this.listViewFilmes.TabIndex = 8;
             this.listViewFilmes.UseCompatibleStateImageBehavior = false;
             this.listViewFilmes.View = System.Windows.Forms.View.Details;
@@ -157,7 +170,8 @@
             // 
             // buttonAdicionar
             // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(525, 427);
+            this.buttonAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAdicionar.Location = new System.Drawing.Point(525, 431);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(75, 23);
             this.buttonAdicionar.TabIndex = 9;
@@ -167,7 +181,8 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(606, 427);
+            this.buttonEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonEditar.Location = new System.Drawing.Point(606, 431);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(75, 23);
             this.buttonEditar.TabIndex = 10;
@@ -177,7 +192,8 @@
             // 
             // buttonRemover
             // 
-            this.buttonRemover.Location = new System.Drawing.Point(687, 427);
+            this.buttonRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRemover.Location = new System.Drawing.Point(687, 431);
             this.buttonRemover.Name = "buttonRemover";
             this.buttonRemover.Size = new System.Drawing.Size(75, 23);
             this.buttonRemover.TabIndex = 11;
@@ -187,7 +203,8 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(444, 427);
+            this.buttonSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSalvar.Location = new System.Drawing.Point(444, 431);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 12;
@@ -195,18 +212,10 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Formulário para cadastro de filmes";
-            // 
             // buttonPesquisar
             // 
-            this.buttonPesquisar.Location = new System.Drawing.Point(15, 428);
+            this.buttonPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonPesquisar.Location = new System.Drawing.Point(15, 432);
             this.buttonPesquisar.Name = "buttonPesquisar";
             this.buttonPesquisar.Size = new System.Drawing.Size(75, 23);
             this.buttonPesquisar.TabIndex = 14;
@@ -225,7 +234,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 466);
             this.Controls.Add(this.buttonPesquisar);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonRemover);
             this.Controls.Add(this.buttonEditar);
@@ -241,7 +249,7 @@
             this.Controls.Add(this.labelNome);
             this.Name = "CineC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CineC";
+            this.Text = "Formulário para cadastro de filmes";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -268,7 +276,6 @@
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonRemover;
         private System.Windows.Forms.Button buttonSalvar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonPesquisar;
         private System.Windows.Forms.ErrorProvider errorProvider;
     }
