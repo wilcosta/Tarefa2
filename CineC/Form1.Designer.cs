@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelNome = new System.Windows.Forms.Label();
             this.labelGenero = new System.Windows.Forms.Label();
             this.labelLocal = new System.Windows.Forms.Label();
@@ -47,6 +48,8 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonPesquisar = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNome
@@ -96,17 +99,6 @@
             // 
             this.comboBoxGen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGen.FormattingEnabled = true;
-            this.comboBoxGen.Items.AddRange(new object[] {
-            "Selecione...",
-            "Ação",
-            "Aventura",
-            "Comédia",
-            "Terror",
-            "Suspense",
-            "Documentário",
-            "Infantil",
-            "Romance",
-            "Ficção Científica"});
             this.comboBoxGen.Location = new System.Drawing.Point(527, 73);
             this.comboBoxGen.Name = "comboBoxGen";
             this.comboBoxGen.Size = new System.Drawing.Size(235, 21);
@@ -222,6 +214,11 @@
             this.buttonPesquisar.UseVisualStyleBackColor = true;
             this.buttonPesquisar.Click += new System.EventHandler(this.buttonPesquisar_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // CineC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,6 +243,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CineC";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +270,7 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonPesquisar;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 

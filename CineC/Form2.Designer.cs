@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.columnHeaderGen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderLocal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDataI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,6 +52,8 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonLimpar = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // columnHeaderGen
@@ -244,6 +247,7 @@
             this.buttonCancelar.TabIndex = 33;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // label2
             // 
@@ -262,6 +266,12 @@
             this.buttonLimpar.TabIndex = 35;
             this.buttonLimpar.Text = "Limpar";
             this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // Form2
             // 
@@ -291,6 +301,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CineC Pesquisa";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,5 +332,6 @@
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonLimpar;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
